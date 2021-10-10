@@ -284,53 +284,45 @@ class MainController {
         vc.navigationController?.view.backgroundColor = .clear
     }
     
-    public static func postRequest(apiURL:String ,params : Parameters, _headers3 : HTTPHeaders, vc: UIViewController, completion:((NSDictionary?,String,Int)->Void)!){
+    public static func postRequest(apiURL:String ,params : Parameters, _headers3 : HTTPHeaders, vc: UIViewController, completion:((JSON,String,Int)->Void)!){
         
         Alamofire.request(apiURL, method: .post, parameters: params,
                           encoding: URLEncoding.httpBody, headers: _headers3)
             .responseJSON { response  in
                 if(response.result.isSuccess)
                 {
-                    if   let resp = response.result.value as? NSDictionary {
-                        let message = resp["message"] as? String ?? ""
-                        completion(resp,message,response.response!.statusCode)
-                    }else {
-                        print("main controller  \(response.result.value ?? "")")
-                        completion(nil,"\(response.result.value ?? "" )",response.response!.statusCode)
-                    }
+                    let mainJSON = JSON(response.result.value!)
+                    completion(mainJSON,"\(response.result.value ?? "" )",response.response!.statusCode)
+                    
                 }
                 else
                 {
                     if   let resp = response.result.value as? NSDictionary {
                         let message = resp["message"] as? String ?? ""
-                        completion(nil,message,response.response!.statusCode)
+                        completion([:],message,response.response!.statusCode)
                     }
-                    print("main controller error \(response.result.error?.localizedDescription)")
+                    print("main controller error \(response.result.error?.localizedDescription ?? "")")
                 }
             }
     }
-    public static func getRequest(apiURL:String ,params : Parameters, _headers3 : HTTPHeaders, vc: UIViewController, completion:((NSDictionary?,String,Int)->Void)!){
+    public static func getRequest(apiURL:String ,params : Parameters, _headers3 : HTTPHeaders, vc: UIViewController, completion:((JSON,String,Int)->Void)!){
         
         Alamofire.request(apiURL, method: .get, parameters: params,
                           encoding: URLEncoding.httpBody, headers: _headers3)
             .responseJSON { response  in
                 if(response.result.isSuccess)
                 {
-                    if   let resp = response.result.value as? NSDictionary {
-                        let message = resp["message"] as? String ?? ""
-                        completion(resp,message,response.response!.statusCode)
-                    }else {
-                        print("main controller  \(response.result.value ?? "")")
-                        completion(nil,"\(response.result.value ?? "" )",response.response!.statusCode)
-                    }
+                    let mainJSON = JSON(response.result.value!)
+                    completion(mainJSON,"\(response.result.value ?? "" )",response.response!.statusCode)
+                    
                 }
                 else
                 {
                     if   let resp = response.result.value as? NSDictionary {
                         let message = resp["message"] as? String ?? ""
-                        completion(nil,message,response.response!.statusCode)
+                        completion([:],message,response.response!.statusCode)
                     }
-                    print("main controller error \(response.result.error?.localizedDescription)")
+                    print("main controller error \(response.result.error?.localizedDescription ?? "")")
                 }
             }
     }
@@ -355,13 +347,9 @@ class MainController {
         }
     }
     public static func stringToColorFunc(mainString: String,stringToColor: String,newColor: UIColor) -> NSAttributedString {
-        
-        
         let range = (mainString as NSString).range(of: stringToColor)
-        
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: newColor, range: range)
-        
         return mutableAttributedString
     }
 }
@@ -381,9 +369,6 @@ class ImageCacheLoader {
     }
     
     func obtainImageWithPath(imagePath: String, completionHandler: @escaping ImageCacheLoaderCompletionHandler) {
-        
-        
-        
         if let image = self.cache.object(forKey: imagePath as NSString) {
             DispatchQueue.main.async {
                 completionHandler(image)
