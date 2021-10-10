@@ -1,0 +1,6 @@
+framework module Pods_IoT_TechnicalAssessment {
+  umbrella header "Pods-IoT-TechnicalAssessment-umbrella.h"
+
+  export *
+  module * { export * }
+}

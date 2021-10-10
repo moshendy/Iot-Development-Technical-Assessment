@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.9.1)
+  - lottie-ios (3.2.3)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - Spring (1.0.6)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - lottie-ios
+  - SDWebImage (~> 5.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - lottie-ios
+    - SDWebImage
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 7bcbe10068e62725ffed0566ad7ff5b9153c0da5
+
+COCOAPODS: 1.10.1
