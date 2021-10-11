@@ -21,6 +21,7 @@
 		6477D75F2713A2F700AC5DF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477D75E2713A2F700AC5DF6 /* HomeViewController.swift */; };
 		6477D7632713A58900AC5DF6 /* galleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6477D7622713A58900AC5DF6 /* galleryTableViewCell.xib */; };
 		6477D7652713A5D900AC5DF6 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477D7642713A5D900AC5DF6 /* GalleryTableViewCell.swift */; };
+		6477D7682713B69D00AC5DF6 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */; };
 		BA8AB5A3B74F3A2773052773 /* Pods_IoT_TechnicalAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF1F5C81FC0FF7261FA876 /* Pods_IoT_TechnicalAssessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		6477D75E2713A2F700AC5DF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6477D7622713A58900AC5DF6 /* galleryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = galleryTableViewCell.xib; sourceTree = "<group>"; };
 		6477D7642713A5D900AC5DF6 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
+		6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		D375134F22F64FCF91FF53B3 /* Pods-IoT-TechnicalAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoT-TechnicalAssessment.release.xcconfig"; path = "Target Support Files/Pods-IoT-TechnicalAssessment/Pods-IoT-TechnicalAssessment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 		6477D75127139D7E00AC5DF6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */,
 				6477D73D27139C2400AC5DF6 /* Main Controllers */,
 				6477D75E2713A2F700AC5DF6 /* HomeViewController.swift */,
 				6477D7552713A14400AC5DF6 /* SplashViewController.swift */,
@@ -281,6 +284,7 @@
 				6477D7562713A14400AC5DF6 /* SplashViewController.swift in Sources */,
 				6477D75D2713A26D00AC5DF6 /* Localizable.swift in Sources */,
 				6477D75C2713A26D00AC5DF6 /* L102Language.swift in Sources */,
+				6477D7682713B69D00AC5DF6 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

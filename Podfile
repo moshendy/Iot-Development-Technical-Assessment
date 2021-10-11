@@ -12,5 +12,7 @@ pod 'SwiftyJSON'
 pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 pod 'SDWebImage', '~> 5.0'
 pod 'lottie-ios'
+pod 'UIImageColors'
+
 
 end

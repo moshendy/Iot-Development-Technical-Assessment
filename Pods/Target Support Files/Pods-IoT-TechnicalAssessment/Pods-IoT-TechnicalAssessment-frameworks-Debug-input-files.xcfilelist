@@ -3,4 +3,5 @@ ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/Spring/Spring.framework
 ${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/UIImageColors/UIImageColors.framework
 ${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

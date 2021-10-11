@@ -6,6 +6,7 @@ PODS:
   - SDWebImage/Core (5.11.1)
   - Spring (1.0.6)
   - SwiftyJSON (5.0.1)
+  - UIImageColors (2.1.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftyJSON
+  - UIImageColors
 
 SPEC REPOS:
   trunk:
@@ -20,6 +22,7 @@ SPEC REPOS:
     - lottie-ios
     - SDWebImage
     - SwiftyJSON
+    - UIImageColors
 
 EXTERNAL SOURCES:
   Spring:
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: 7bcbe10068e62725ffed0566ad7ff5b9153c0da5
+PODFILE CHECKSUM: 5c850726388a3f9d49d105c1d94231b58354198c
 
 COCOAPODS: 1.10.1

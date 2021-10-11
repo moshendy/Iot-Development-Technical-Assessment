@@ -16,9 +16,9 @@ class HomeViewController: UIViewController {
     let _headers : HTTPHeaders = ["Accept":"application/json"]
     var mainJSON : JSON?
     var scroll = true
-
+    
     var currentIndex = 0
-    var currentPage = 1
+    var page = 1
     var limit = 10
     
     override func viewDidLoad() {
@@ -29,11 +29,10 @@ class HomeViewController: UIViewController {
     func loadData(){
         MainController.showActivityIndicator(vc: self, nameGIF: "loading")
         
-        let api2 = "https://picsum.photos/v2/list?page=\(currentPage)&limit=\(limit)"
+        let api2 = "https://picsum.photos/v2/list?page=\(page)&limit=\(limit)"
         let paramsFilters2 : Parameters = [:]
         MainController.getRequest(apiURL: api2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, params: paramsFilters2, _headers3: _headers,vc: self){
             (response, message,statusCode) in
-            MainController.hideActivityIndicator(vc: self,timeSeconds: 2)
             
             self.mainJSON = response
             
@@ -41,10 +40,20 @@ class HomeViewController: UIViewController {
             self.listingTable.delegate = self
             self.listingTable.dataSource = self
             self.listingTable.reloadData()
-            
+            MainController.hideActivityIndicator(vc: self,timeSeconds: 2)
+
             
         }
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //pass the image and author to the details screen
+        if segue.identifier == "viewPost"{
+            let destinationViewController = segue.destination as! PhotoViewController
+            destinationViewController.photoURL = self.mainJSON![currentIndex]["download_url"].string ?? ""
+            destinationViewController.author = self.mainJSON![currentIndex]["author"].string ?? ""
+            
+        }
     }
     
     
@@ -69,6 +78,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentIndex = indexPath.row
+        MainController.gotoPage(identifier: "viewPost", vc: self, timeSeconds: 0)
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = self.mainJSON!.count - 1
@@ -76,8 +87,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == lastElement {
             
             if scroll {
-                currentPage = currentPage + 1
-                let api2 = "https://picsum.photos/v2/list?page=\(currentPage)&limit=\(limit)"
+                page = page + 1
+                let api2 = "https://picsum.photos/v2/list?page=\(page)&limit=\(limit)"
                 let paramsFilters2 : Parameters = [:]
                 MainController.getRequest(apiURL: api2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, params: paramsFilters2, _headers3: _headers,vc: self){
                     (response, message,statusCode) in

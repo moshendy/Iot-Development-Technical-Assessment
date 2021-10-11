@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -56,7 +56,7 @@
             </objects>
             <point key="canvasLocation" x="35" y="86"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Gallery-->
         <scene sceneID="3D3-nB-zls">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eqf-uv-I6P" customClass="HomeViewController" customModule="IoT_TechnicalAssessment" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,14 +64,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0h-sn-4bQ">
-                                <rect key="frame" x="20" y="128" width="374" height="48"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="280" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VjQ-DG-xX8">
-                                <rect key="frame" x="20" y="206" width="374" height="641"/>
+                                <rect key="frame" x="20" y="98" width="374" height="749"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="30" maxX="0.0" maxY="0.0"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,18 +74,18 @@
                         <viewLayoutGuide key="safeArea" id="MzQ-S1-jtu"/>
                         <color key="backgroundColor" name="Color1"/>
                         <constraints>
+                            <constraint firstItem="VjQ-DG-xX8" firstAttribute="top" secondItem="MzQ-S1-jtu" secondAttribute="top" constant="10" id="9Xt-Yu-6ah"/>
                             <constraint firstItem="MzQ-S1-jtu" firstAttribute="bottom" secondItem="VjQ-DG-xX8" secondAttribute="bottom" constant="15" id="E3z-zy-ZA6"/>
-                            <constraint firstItem="MzQ-S1-jtu" firstAttribute="trailing" secondItem="v0h-sn-4bQ" secondAttribute="trailing" constant="20" id="O2I-Aj-QHl"/>
-                            <constraint firstItem="v0h-sn-4bQ" firstAttribute="top" secondItem="MzQ-S1-jtu" secondAttribute="top" constant="40" id="Pyf-aR-WFj"/>
-                            <constraint firstItem="VjQ-DG-xX8" firstAttribute="top" secondItem="v0h-sn-4bQ" secondAttribute="bottom" constant="30" id="al6-aj-lJe"/>
                             <constraint firstItem="MzQ-S1-jtu" firstAttribute="trailing" secondItem="VjQ-DG-xX8" secondAttribute="trailing" constant="20" id="dcD-xq-Y8b"/>
-                            <constraint firstItem="v0h-sn-4bQ" firstAttribute="leading" secondItem="MzQ-S1-jtu" secondAttribute="leading" constant="20" id="k9Z-Zc-74c"/>
                             <constraint firstItem="VjQ-DG-xX8" firstAttribute="leading" secondItem="MzQ-S1-jtu" secondAttribute="leading" constant="20" id="mge-rt-aig"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l1b-wx-YW8"/>
+                    <navigationItem key="navigationItem" title="Gallery" id="l1b-wx-YW8">
+                        <barButtonItem key="backBarButtonItem" title=" " id="sS1-Ke-gQK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="listingTable" destination="VjQ-DG-xX8" id="AoR-sm-9Ar"/>
+                        <segue destination="XmW-ec-bgV" kind="show" identifier="viewPost" id="qhC-C0-hCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggk-d5-bfE" sceneMemberID="firstResponder"/>
@@ -106,8 +100,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5O-gf-j1W">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="Color1"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="25"/>
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -120,15 +119,90 @@
             </objects>
             <point key="canvasLocation" x="820" y="86"/>
         </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="uUY-fp-SYK">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XmW-ec-bgV" customClass="PhotoViewController" customModule="IoT_TechnicalAssessment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E51-8W-HFq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Z-ri-Tyu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="photo.on.rectangle.angled" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-n7-1aP">
+                                        <rect key="frame" x="25" y="49.5" width="364" height="450"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="450" id="Uup-yh-8oN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okp-9d-KCA">
+                                        <rect key="frame" x="15" y="520" width="384" height="48"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLZ-p4-xUX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="openImageAction:" destination="XmW-ec-bgV" eventType="touchUpInside" id="T41-oL-vGs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Okp-9d-KCA" firstAttribute="leading" secondItem="Y3Z-ri-Tyu" secondAttribute="leading" constant="15" id="0Z1-p9-vQY"/>
+                                    <constraint firstItem="Okp-9d-KCA" firstAttribute="top" secondItem="nQr-n7-1aP" secondAttribute="bottom" constant="20" id="28x-7l-pLy"/>
+                                    <constraint firstAttribute="bottom" secondItem="hLZ-p4-xUX" secondAttribute="bottom" id="44U-QR-stf"/>
+                                    <constraint firstItem="hLZ-p4-xUX" firstAttribute="top" secondItem="Y3Z-ri-Tyu" secondAttribute="top" id="53Z-sP-rBe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Okp-9d-KCA" secondAttribute="trailing" constant="15" id="GSK-fA-cAd"/>
+                                    <constraint firstItem="nQr-n7-1aP" firstAttribute="centerX" secondItem="Y3Z-ri-Tyu" secondAttribute="centerX" id="NoC-Gv-cWq"/>
+                                    <constraint firstAttribute="trailing" secondItem="hLZ-p4-xUX" secondAttribute="trailing" id="QKg-7N-RpR"/>
+                                    <constraint firstItem="nQr-n7-1aP" firstAttribute="top" secondItem="Y3Z-ri-Tyu" secondAttribute="top" constant="50" id="bDP-ib-FTk"/>
+                                    <constraint firstItem="hLZ-p4-xUX" firstAttribute="leading" secondItem="Y3Z-ri-Tyu" secondAttribute="leading" id="jPY-bw-Xfv"/>
+                                    <constraint firstItem="nQr-n7-1aP" firstAttribute="leading" secondItem="Y3Z-ri-Tyu" secondAttribute="leading" constant="25" id="v4g-LO-PL3"/>
+                                    <constraint firstAttribute="trailing" secondItem="nQr-n7-1aP" secondAttribute="trailing" constant="25" id="xrm-kA-Ii1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PhN-yd-Sq6"/>
+                        <color key="backgroundColor" name="Color1"/>
+                        <constraints>
+                            <constraint firstItem="Y3Z-ri-Tyu" firstAttribute="trailing" secondItem="PhN-yd-Sq6" secondAttribute="trailing" id="4gq-AF-KeK"/>
+                            <constraint firstItem="Y3Z-ri-Tyu" firstAttribute="leading" secondItem="PhN-yd-Sq6" secondAttribute="leading" id="5fr-m8-92g"/>
+                            <constraint firstItem="Y3Z-ri-Tyu" firstAttribute="top" secondItem="PhN-yd-Sq6" secondAttribute="top" id="9Au-dT-JN0"/>
+                            <constraint firstItem="PhN-yd-Sq6" firstAttribute="bottom" secondItem="Y3Z-ri-Tyu" secondAttribute="bottom" id="p2E-UK-MXA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BRC-ZL-exV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="YoH-6t-qVW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorText" destination="Okp-9d-KCA" id="PQz-L5-Xfk"/>
+                        <outlet property="mainImage" destination="nQr-n7-1aP" id="JDN-GX-Ac4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Az-hx-fAO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="804"/>
+        </scene>
     </scenes>
     <color key="tintColor" name="AccentColor2"/>
     <resources>
         <image name="logo" width="128" height="128"/>
+        <image name="photo.on.rectangle.angled" catalog="system" width="128" height="100"/>
         <namedColor name="AccentColor2">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Color1">
-            <color red="0.54010564090000002" green="0.69928675890000003" blue="0.38817536829999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.54000002145767212" green="0.69900000095367432" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
