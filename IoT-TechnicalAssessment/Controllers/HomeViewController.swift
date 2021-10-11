@@ -50,9 +50,9 @@ class HomeViewController: UIViewController {
         MainController.showActivityIndicator(vc: self, nameGIF: "loading") //show loading gif
 
         
-        // get first 20 row
+        // get first 15 row
         
-        let api2 = "https://picsum.photos/v2/list?page=\(page)&limit=20"
+        let api2 = "https://picsum.photos/v2/list?page=\(page)&limit=15"
         let paramsFilters2 : Parameters = [:]
         MainController.getRequest(apiURL: api2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, params: paramsFilters2, _headers3: _headers,vc: self){
             (response, message,statusCode) in
@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
             
             
             self.mainJSON = Mapper<GalleryModel>().mapArray(JSONArray: response.rawValue as! [[String : Any]])
-            //cache the first 20 rows to display so the app could work in offline mode.
+            //cache the first 15 rows to display so the app could work in offline mode.
             do {
                 try DataCache.instance.write(codable: self.mainJSON, forKey: "CachedJSON")
             } catch {

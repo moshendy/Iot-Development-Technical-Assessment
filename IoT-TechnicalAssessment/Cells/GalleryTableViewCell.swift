@@ -11,6 +11,7 @@ class GalleryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var adView: UIView!
     @IBOutlet weak var mainImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

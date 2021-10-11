@@ -239,7 +239,7 @@ class MainController {
         animationView.frame = vc.view.bounds
         animationView.contentMode = .center
         animationView.loopMode = .loop
-        animationView.animationSpeed = 0.5
+        animationView.animationSpeed = 1
         
         myView.addSubview(animationView)
         
