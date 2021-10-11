@@ -26,9 +26,20 @@
 		BA8AB5A3B74F3A2773052773 /* Pods_IoT_TechnicalAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF1F5C81FC0FF7261FA876 /* Pods_IoT_TechnicalAssessment.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6417C7402714FC44008F6EB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6477D71E2713989100AC5DF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6477D7252713989100AC5DF6;
+			remoteInfo = "IoT-TechnicalAssessment";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4CC21CD7B1BFFE2C934D4A2B /* Pods-IoT-TechnicalAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoT-TechnicalAssessment.debug.xcconfig"; path = "Target Support Files/Pods-IoT-TechnicalAssessment/Pods-IoT-TechnicalAssessment.debug.xcconfig"; sourceTree = "<group>"; };
 		59EF1F5C81FC0FF7261FA876 /* Pods_IoT_TechnicalAssessment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IoT_TechnicalAssessment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6417C73C2714FC44008F6EB6 /* IoT-TechnicalAssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IoT-TechnicalAssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6477D7262713989100AC5DF6 /* IoT-TechnicalAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IoT-TechnicalAssessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6477D7292713989100AC5DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6477D72B2713989100AC5DF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6417C7392714FC44008F6EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6477D7232713989100AC5DF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				6477D7262713989100AC5DF6 /* IoT-TechnicalAssessment.app */,
+				6417C73C2714FC44008F6EB6 /* IoT-TechnicalAssessmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +191,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6417C73B2714FC44008F6EB6 /* IoT-TechnicalAssessmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6417C7442714FC44008F6EB6 /* Build configuration list for PBXNativeTarget "IoT-TechnicalAssessmentTests" */;
+			buildPhases = (
+				6417C7382714FC44008F6EB6 /* Sources */,
+				6417C7392714FC44008F6EB6 /* Frameworks */,
+				6417C73A2714FC44008F6EB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6417C7412714FC44008F6EB6 /* PBXTargetDependency */,
+			);
+			name = "IoT-TechnicalAssessmentTests";
+			productName = "IoT-TechnicalAssessmentTests";
+			productReference = 6417C73C2714FC44008F6EB6 /* IoT-TechnicalAssessmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6477D7252713989100AC5DF6 /* IoT-TechnicalAssessment */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6477D73A2713989200AC5DF6 /* Build configuration list for PBXNativeTarget "IoT-TechnicalAssessment" */;
@@ -201,6 +238,10 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					6417C73B2714FC44008F6EB6 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 6477D7252713989100AC5DF6;
+					};
 					6477D7252713989100AC5DF6 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -220,11 +261,19 @@
 			projectRoot = "";
 			targets = (
 				6477D7252713989100AC5DF6 /* IoT-TechnicalAssessment */,
+				6417C73B2714FC44008F6EB6 /* IoT-TechnicalAssessmentTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6417C73A2714FC44008F6EB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6477D7242713989100AC5DF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +331,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6417C7382714FC44008F6EB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6477D7222713989100AC5DF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,6 +357,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6417C7412714FC44008F6EB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6477D7252713989100AC5DF6 /* IoT-TechnicalAssessment */;
+			targetProxy = 6417C7402714FC44008F6EB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6477D72F2713989100AC5DF6 /* Main.storyboard */ = {
@@ -322,6 +386,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6417C7422714FC44008F6EB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB6R56A4H5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shendy.IoT-TechnicalAssessmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IoT-TechnicalAssessment.app/IoT-TechnicalAssessment";
+			};
+			name = Debug;
+		};
+		6417C7432714FC44008F6EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RB6R56A4H5;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Shendy.IoT-TechnicalAssessmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IoT-TechnicalAssessment.app/IoT-TechnicalAssessment";
+			};
+			name = Release;
+		};
 		6477D7382713989200AC5DF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -445,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = RB6R56A4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-TechnicalAssessment/Info.plist";
@@ -461,7 +571,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shendy.IoT-TechnicalAssessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -477,7 +587,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.0;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = RB6R56A4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-TechnicalAssessment/Info.plist";
@@ -493,7 +603,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Shendy.IoT-TechnicalAssessment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -505,6 +615,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6417C7442714FC44008F6EB6 /* Build configuration list for PBXNativeTarget "IoT-TechnicalAssessmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6417C7422714FC44008F6EB6 /* Debug */,
+				6417C7432714FC44008F6EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6477D7212713989100AC5DF6 /* Build configuration list for PBXProject "IoT-TechnicalAssessment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
