@@ -103,7 +103,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         cell.mainImage.sd_setImage(with: URL(string:  "\(self.mainJSON![indexPath.row].imageURL ?? "")"), placeholderImage: UIImage(systemName: "photo.artframe"))
         
         // check to display add
-        if indexPath.row % 5 != 0 || indexPath.row == 0 {
+        if (indexPath.row+1) % 5 != 0{
             cell.adView.isHidden = true
         }else{
             cell.adView.isHidden = false
@@ -156,7 +156,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row % 5 != 0 || indexPath.row == 0 {
+        if (indexPath.row+1) % 5 != 0{
             return 310 // height for cell without ad
         }else{
             return 450 // height for cell with ad
