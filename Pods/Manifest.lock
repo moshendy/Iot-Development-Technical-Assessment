@@ -1,6 +1,8 @@
 PODS:
   - Alamofire (4.9.1)
+  - DataCache (1.6.0)
   - lottie-ios (3.2.3)
+  - ObjectMapper (4.2.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -10,7 +12,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - DataCache
   - lottie-ios
+  - ObjectMapper
   - SDWebImage (~> 5.0)
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftyJSON
@@ -19,7 +23,9 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - DataCache
     - lottie-ios
+    - ObjectMapper
     - SDWebImage
     - SwiftyJSON
     - UIImageColors
@@ -35,12 +41,14 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  DataCache: 5f24b356848a37469dbebec89c28ca88b4ef9294
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   UIImageColors: d2ef3b0877d203cbb06489eeb78ea8b7788caabe
 
-PODFILE CHECKSUM: 5c850726388a3f9d49d105c1d94231b58354198c
+PODFILE CHECKSUM: 5ab9cbaa252b33905db5d4b33dc9d9e8c1853493
 
 COCOAPODS: 1.10.1

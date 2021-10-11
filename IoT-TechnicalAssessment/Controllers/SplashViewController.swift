@@ -14,13 +14,7 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        if MainController.isConnectedToInternet() == 1{
-            //After Loading go to home
-            MainController.pushViewController(identifier: "home", vc: self, timeSeconds: 3)
-        }else{
-            MainController.viewAlertDialog(vc: self, title: "No internet connection".localized, message: "App needs internet connection.".localized)
-        }
+        MainController.pushViewController(identifier: "home", vc: self, timeSeconds: 3)
     }
     
 }

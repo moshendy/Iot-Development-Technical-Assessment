@@ -14,5 +14,7 @@ pod 'SDWebImage', '~> 5.0'
 pod 'lottie-ios'
 pod 'UIImageColors'
 
+pod 'DataCache'
+pod 'ObjectMapper'
 
 end
