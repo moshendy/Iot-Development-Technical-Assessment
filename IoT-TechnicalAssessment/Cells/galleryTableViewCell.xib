@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="U6N-pX-FBu">
-                                <rect key="frame" x="0.0" y="1" width="375" height="247.5"/>
+                                <rect key="frame" x="25" y="1" width="325" height="247.5"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="ozq-12-MJm"/>
@@ -54,8 +54,8 @@
                         <constraints>
                             <constraint firstItem="U6N-pX-FBu" firstAttribute="top" secondItem="Fvh-3V-Fob" secondAttribute="top" id="2ag-U8-t0R"/>
                             <constraint firstAttribute="trailing" secondItem="XeA-Yh-9e1" secondAttribute="trailing" id="HNh-00-TG4"/>
-                            <constraint firstItem="U6N-pX-FBu" firstAttribute="leading" secondItem="Fvh-3V-Fob" secondAttribute="leading" id="Koo-Mw-nXu"/>
-                            <constraint firstAttribute="trailing" secondItem="U6N-pX-FBu" secondAttribute="trailing" id="LoU-nw-4cn"/>
+                            <constraint firstItem="U6N-pX-FBu" firstAttribute="leading" secondItem="Fvh-3V-Fob" secondAttribute="leading" constant="25" id="Koo-Mw-nXu"/>
+                            <constraint firstAttribute="trailing" secondItem="U6N-pX-FBu" secondAttribute="trailing" constant="25" id="LoU-nw-4cn"/>
                             <constraint firstItem="XeA-Yh-9e1" firstAttribute="leading" secondItem="Fvh-3V-Fob" secondAttribute="leading" id="Sl9-1k-CFb"/>
                             <constraint firstItem="XeA-Yh-9e1" firstAttribute="top" secondItem="U6N-pX-FBu" secondAttribute="bottom" constant="30" id="WmQ-uX-nmP"/>
                             <constraint firstAttribute="bottom" secondItem="XeA-Yh-9e1" secondAttribute="bottom" constant="30" id="y5R-tZ-oVb"/>

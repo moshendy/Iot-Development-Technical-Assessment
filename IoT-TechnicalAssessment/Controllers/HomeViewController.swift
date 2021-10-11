@@ -9,13 +9,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import DataCache
+import ObjectMapper
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var listingTable: UITableView!
     
     let _headers : HTTPHeaders = ["Accept":"application/json"]
-    var mainJSON : JSON?
+    var mainJSON :[GalleryModel]?
     var scroll = true
     
     var currentIndex = 0
@@ -36,10 +37,10 @@ class HomeViewController: UIViewController {
             } catch {
                 print("Read error \(error.localizedDescription)")
             }
-            self.listingTable.register(UINib(nibName: "galleryTableViewCell", bundle: nil), forCellReuseIdentifier: "galleryTableViewCell")
-            self.listingTable.delegate = self
-            self.listingTable.dataSource = self
-            self.listingTable.reloadData()
+            listingTable.register(UINib(nibName: "galleryTableViewCell", bundle: nil), forCellReuseIdentifier: "galleryTableViewCell")
+            listingTable.delegate = self
+            listingTable.dataSource = self
+            listingTable.reloadData()
             //reload table
 
         }
@@ -56,8 +57,9 @@ class HomeViewController: UIViewController {
         MainController.getRequest(apiURL: api2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, params: paramsFilters2, _headers3: _headers,vc: self){
             (response, message,statusCode) in
             
-            self.mainJSON = response
             
+            
+            self.mainJSON = Mapper<GalleryModel>().mapArray(JSONArray: response.rawValue as! [[String : Any]])
             //cache the first 20 rows to display so the app could work in offline mode.
             do {
                 try DataCache.instance.write(codable: self.mainJSON, forKey: "CachedJSON")
@@ -82,8 +84,8 @@ class HomeViewController: UIViewController {
         //pass the image and author to the details screen
         if segue.identifier == "viewPost"{
             let destinationViewController = segue.destination as! PhotoViewController
-            destinationViewController.photoURL = self.mainJSON![currentIndex]["download_url"].string ?? ""
-            destinationViewController.author = self.mainJSON![currentIndex]["author"].string ?? ""
+            destinationViewController.photoURL = self.mainJSON![currentIndex].imageURL ?? ""
+            destinationViewController.author = self.mainJSON![currentIndex].author ?? ""
             
         }
     }
@@ -98,7 +100,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "galleryTableViewCell", for: indexPath) as! GalleryTableViewCell
-        cell.mainImage.sd_setImage(with: URL(string:  "\(self.mainJSON![indexPath.row]["download_url"].string ?? "")"), placeholderImage: UIImage(systemName: "photo.artframe"))
+        cell.mainImage.sd_setImage(with: URL(string:  "\(self.mainJSON![indexPath.row].imageURL ?? "")"), placeholderImage: UIImage(systemName: "photo.artframe"))
         
         // check to display add
         if indexPath.row % 5 != 0 || indexPath.row == 0 {
@@ -115,29 +117,32 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement = self.mainJSON!.count - 1
-        
+
         if indexPath.row == lastElement { // check if last element in the tableview to load more data
-            
+
             if MainController.isConnectedToInternet() == 1{
-                
+
                 if scroll {
                     page = page + 1
                     let api2 = "https://picsum.photos/v2/list?page=\(page)&limit=\(limit)"
                     let paramsFilters2 : Parameters = [:]
                     MainController.getRequest(apiURL: api2.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, params: paramsFilters2, _headers3: _headers,vc: self){
                         (response, message,statusCode) in
-                        
+
                         let oldCount = self.mainJSON!.count // total rows before new request
-                        
-                        self.mainJSON = try! self.mainJSON!.merged(with: response)
-                        
+
+                        // get new JSON and convert it to model object
+                        let newMainJSON : [GalleryModel] = Mapper<GalleryModel>().mapArray(JSONArray: response.rawValue as! [[String : Any]])
+
+                        self.mainJSON = self.mainJSON! + newMainJSON // merge the old data with new rows
+
                         let newCount = self.mainJSON!.count // total rows after new request
-                        
+
                         // check if old count equals new count to stop sending request
                         if newCount == oldCount{
                             self.scroll = false
                         }
-                        
+
                         self.listingTable.register(UINib(nibName: "galleryTableViewCell", bundle: nil), forCellReuseIdentifier: "galleryTableViewCell")
                         self.listingTable.delegate = self
                         self.listingTable.dataSource = self

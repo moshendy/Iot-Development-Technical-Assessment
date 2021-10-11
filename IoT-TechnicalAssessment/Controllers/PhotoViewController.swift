@@ -22,7 +22,7 @@ class PhotoViewController: UIViewController {
         authorText.text = author
         mainImage.sd_setImage(with: URL(string:  photoURL), placeholderImage: UIImage(systemName: "photo.artframe"))
         let colors = mainImage.image!.getColors()
-        self.view.backgroundColor = colors?.background
+        self.view.backgroundColor = colors?.secondary
 
         authorText.textColor = colors?.primary
     }

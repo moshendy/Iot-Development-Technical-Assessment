@@ -22,6 +22,7 @@
 		6477D7632713A58900AC5DF6 /* galleryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6477D7622713A58900AC5DF6 /* galleryTableViewCell.xib */; };
 		6477D7652713A5D900AC5DF6 /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477D7642713A5D900AC5DF6 /* GalleryTableViewCell.swift */; };
 		6477D7682713B69D00AC5DF6 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */; };
+		64C8D8AE2713C89C000BEC45 /* GalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C8D8AD2713C89C000BEC45 /* GalleryModel.swift */; };
 		BA8AB5A3B74F3A2773052773 /* Pods_IoT_TechnicalAssessment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59EF1F5C81FC0FF7261FA876 /* Pods_IoT_TechnicalAssessment.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6477D7622713A58900AC5DF6 /* galleryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = galleryTableViewCell.xib; sourceTree = "<group>"; };
 		6477D7642713A5D900AC5DF6 /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 		6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		64C8D8AD2713C89C000BEC45 /* GalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryModel.swift; sourceTree = "<group>"; };
 		D375134F22F64FCF91FF53B3 /* Pods-IoT-TechnicalAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoT-TechnicalAssessment.release.xcconfig"; path = "Target Support Files/Pods-IoT-TechnicalAssessment/Pods-IoT-TechnicalAssessment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		6477D7282713989100AC5DF6 /* IoT-TechnicalAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				64C8D8AF2713C8A1000BEC45 /* Models */,
 				6477D75127139D7E00AC5DF6 /* Controllers */,
 				6477D7662713A5E700AC5DF6 /* Cells */,
 				6477D75227139D8B00AC5DF6 /* VIews */,
@@ -114,8 +117,8 @@
 		6477D75127139D7E00AC5DF6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */,
 				6477D73D27139C2400AC5DF6 /* Main Controllers */,
+				6477D7672713B69D00AC5DF6 /* PhotoViewController.swift */,
 				6477D75E2713A2F700AC5DF6 /* HomeViewController.swift */,
 				6477D7552713A14400AC5DF6 /* SplashViewController.swift */,
 			);
@@ -148,6 +151,14 @@
 				6477D7642713A5D900AC5DF6 /* GalleryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		64C8D8AF2713C8A1000BEC45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				64C8D8AD2713C89C000BEC45 /* GalleryModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F0A4B2B05FDD0731D24F5798 /* Frameworks */ = {
@@ -283,6 +294,7 @@
 				6477D72C2713989100AC5DF6 /* SceneDelegate.swift in Sources */,
 				6477D7562713A14400AC5DF6 /* SplashViewController.swift in Sources */,
 				6477D75D2713A26D00AC5DF6 /* Localizable.swift in Sources */,
+				64C8D8AE2713C89C000BEC45 /* GalleryModel.swift in Sources */,
 				6477D75C2713A26D00AC5DF6 /* L102Language.swift in Sources */,
 				6477D7682713B69D00AC5DF6 /* PhotoViewController.swift in Sources */,
 			);
@@ -437,6 +449,7 @@
 				DEVELOPMENT_TEAM = RB6R56A4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-TechnicalAssessment/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = IoT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -468,6 +481,7 @@
 				DEVELOPMENT_TEAM = RB6R56A4H5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IoT-TechnicalAssessment/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = IoT;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
